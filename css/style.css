@@ -1,0 +1,88 @@
+main {
+  font-size: 10px;
+}
+
+main .forms {
+  position: absolute;
+  left: 50%;
+  top: 25%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 11;
+  overflow: hidden;
+  padding: 50px;
+  background-color: #fff;
+  visibility: hidden;
+}
+
+main .forms.formsOpen {
+  visibility: visible;
+}
+
+main .forms.formsOpen .events .addEvent {
+  display: block;
+  margin: 0 auto;
+}
+
+main .mask {
+  background-color: black;
+  opacity: .5;
+  width: 100%;
+  height: 400px;
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+main .mask.maskOpen {
+  visibility: visible;
+}
+
+main .eventClickOpen {
+  position: absolute;
+  left: 50%;
+  top: 25%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 11;
+  overflow: hidden;
+  padding: 50px;
+  background-color: #fff;
+  visibility: hidden;
+}
+
+main .eventClickOpen.active {
+  visibility: visible;
+}
+
+main .eventClickOpen .eventClickOpenText {
+  padding: 8px;
+}
+
+main .eventClickOpen .removeItem {
+  margin: 0 auto;
+  display: block;
+  font-size: 10px;
+}
+
+main .eventClickOpen .conditionStatus {
+  text-align: center;
+}
+
+main .eventClickOpen .conditionStatus .todayDate {
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+main .myLineChartContainer {
+  margin: 50px auto;
+  visibility: visible;
+}
+
+main .myLineChartContainer.hidden {
+  visibility: hidden;
+}
+/*# sourceMappingURL=style.css.map */

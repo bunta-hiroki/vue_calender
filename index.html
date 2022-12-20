@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>カレンダーアプリ</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <link rel="stylesheet" href="css/main.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+  <script src="js/main.min.js"></script>
+  <script src="js/locales-all.min.js"></script>
+  <script src="https://unpkg.com/vue@3"></script> 
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <main>
+    <div id='calendar' class="calendar"></div>
+    <div class='calendaritem'></div>
+
+    <div class="forms">
+      <form name="events" class="events">
+        <input type="date" name="startDate"><br>
+        <input type="text" name="eventTitle" placeholder="予定" list="eventTitledata">
+        <datalist id="eventTitledata">
+          <option value="dayOff">休み</option>
+          <option value="work1">仕事1</option>
+          <option value="work2">仕事2</option>
+          <option value="work3">仕事3</option>
+          <option value="work4">仕事4</option>
+          <option value="work5">仕事5</option>
+          <option value="work6">仕事6</option>
+          <option value="work7">仕事7</option>
+        </datalist>
+        <input type="time" name="startTime">
+        <input type="text" name="bodyWeight" placeholder="体重を記入" list="bodyWeightdata">
+        <datalist id="bodyWeightdata">
+          <option value="59.0">59.0</option>
+          <option value="59.1">59.1</option>
+          <option value="59.2">59.2</option>
+          <option value="59.3">59.3</option>
+          <option value="59.4">59.4</option>
+          <option value="59.5">59.5</option>
+          <option value="59.6">59.6</option>
+          <option value="59.7">59.7</option>
+          <option value="59.8">59.8</option>
+          <option value="59.9">59.9</option>
+          <option value="60.0">60.0</option>
+          <option value="60.1">60.1</option>
+          <option value="60.2">60.2</option>
+          <option value="60.3">60.3</option>
+          <option value="60.4">60.4</option>
+          <option value="60.5">60.5</option>
+          <option value="60.6">60.6</option>
+          <option value="60.7">60.7</option>
+          <option value="60.8">60.8</option>
+          <option value="60.9">60.9</option>
+          <option value="61.0">61.0</option>
+          <option value="61.1">61.1</option>
+          <option value="61.2">61.2</option>
+          <option value="61.3">61.3</option>
+          <option value="61.4">61.4</option>
+          <option value="61.5">61.5</option>
+          <option value="61.6">61.6</option>
+          <option value="61.7">61.7</option>
+          <option value="61.8">61.8</option>
+          <option value="61.9">61.9</option>
+          <option value="62.0">62.0</option>
+          <option value="62.1">62.1</option>
+          <option value="62.2">62.2</option>
+          <option value="62.3">62.3</option>
+          <option value="62.4">62.4</option>
+          <option value="62.5">62.5</option>
+          <option value="62.6">62.6</option>
+          <option value="62.7">62.7</option>
+          <option value="62.8">62.8</option>
+          <option value="62.9">62.9</option>
+          <option value="63.0">63.0</option>
+          <option value="63.1">63.1</option>
+          <option value="63.2">63.2</option>
+          <option value="63.3">63.3</option>
+          <option value="63.4">63.4</option>
+          <option value="63.5">63.5</option>
+          <option value="63.6">63.6</option>
+          <option value="63.7">63.7</option>
+          <option value="63.8">63.8</option>
+          <option value="63.9">63.9</option>
+          <option value="64.0">64.0</option>
+          <option value="65.0">65.0</option>
+          <option value="66.0">66.0</option>
+          <option value="67.0">67.0</option>
+          <option value="68.0">68.0</option>
+          <option value="69.0">69.0</option>
+          <option value="70.0">70.0</option>
+        </datalist>
+        <input type="number" name="bodyTemperature" placeholder="体温を記入" list="bodyTemperaturedata">
+        <datalist id="bodyTemperaturedata">
+          <option value="35.5">35.5</option>
+          <option value="35.6">35.6</option>
+          <option value="35.7">35.7</option>
+          <option value="35.8">35.8</option>
+          <option value="35.9">35.9</option>
+          <option value="36.0">36.0</option>
+          <option value="36.1">36.1</option>
+          <option value="36.2">36.2</option>
+          <option value="36.3">36.3</option>
+          <option value="36.4">36.4</option>
+          <option value="36.5">36.5</option>
+          <option value="36.6">36.6</option>
+          <option value="36.7">36.7</option>
+          <option value="36.8">36.8</option>
+          <option value="36.9">36.9</option>
+          <option value="37.0">37.0</option>
+          <option value="37.1">37.1</option>
+          <option value="37.2">37.2</option>
+          <option value="37.3">37.3</option>
+          <option value="37.4">37.4</option>
+          <option value="37.5">37.5</option>
+          <option value="37.6">37.6</option>
+          <option value="37.7">37.7</option>
+          <option value="37.8">37.8</option>
+          <option value="37.9">37.9</option>
+          <option value="38.0">38.0</option>
+          <option value="38.1">38.1</option>
+          <option value="38.2">38.2</option>
+          <option value="38.3">38.3</option>
+          <option value="38.4">38.4</option>
+          <option value="38.5">38.5</option>
+          <option value="38.6">38.6</option>
+          <option value="38.7">38.7</option>
+          <option value="38.8">38.8</option>
+          <option value="38.9">38.9</option>
+        </datalist>
+        <br>
+        疲労度:
+        <select name="PhysicalCondition" placeholder="体重を記入">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+        <br>
+        <button name="addEvent" class="addEvent">追加する</button>
+      </form>
+    </div>
+    <div class="mask"></div>
+    <div class="eventClickOpen">
+      <div class="conditionStatus">
+        <div class="todayDate"></div>
+        <div class="bodyWeight"></div>
+        <div class="bodyTemperature"></div>
+        <div class="PhysicalCondition"></div>
+      </div>
+      <div class="eventClickOpenText"></div>
+      <button class="removeItem">削除する</button>
+    </div>
+
+    <div class="myLineChartContainer" style="width: 70%;">
+      <canvas id="myLineChart"></canvas>
+    </div>
+
+  </main>
+</body>
+</html>
